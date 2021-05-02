@@ -33,7 +33,8 @@
         <hr>
     </div>
     <div class="post-content">
-        <h2 id="搭建完成分享记录一下成果"><a href="#搭建完成分享记录一下成果" class="headerlink" title="搭建完成分享记录一下成果"></a>搭建完成分享记录一下成果</h2><h4 id="第一步：安装所需软件"><a href="#第一步：安装所需软件" class="headerlink" title="第一步：安装所需软件"></a>第一步：安装所需软件</h4><p>首先去官网下载nodejs。链接: <a target="_blank" rel="noopener" href="http://nodejs.cn/">link</a>.<br>下载过后下载git,这个一般电脑自带的软件商店中有。<br>然后下载在git中下载hexo。链接: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">link</a>.<br>tip: 这里先找好你放置的文件目录；因为下边的指令操作都是在blog文件下操作的。</p>
+        <h2 id="搭建完成分享记录一下成果"><a href="#搭建完成分享记录一下成果" class="headerlink" title="搭建完成分享记录一下成果"></a>搭建完成分享记录一下成果</h2><p>前言：通过学习，感觉学到最多的不是网站的搭建而是GitHub和git的使用！呵嘻嘻嘻~~</p>
+<h4 id="第一步：安装所需软件"><a href="#第一步：安装所需软件" class="headerlink" title="第一步：安装所需软件"></a>第一步：安装所需软件</h4><p>首先去官网下载nodejs。链接: <a target="_blank" rel="noopener" href="http://nodejs.cn/">link</a>.<br>下载过后下载git,这个一般电脑自带的软件商店中有。<br>然后下载在git中下载hexo。链接: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">link</a>.<br>tip: 这里先找好你放置的文件目录；因为下边的指令操作都是在blog文件下操作的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对着所选的文件夹，右键打开git bash here 输入指令：npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">下边的指令都是在git中输入的</span><br><span class="line">hexo init blog : 新建hexo的文件目录在blog下</span><br><span class="line">cd blog ： 转到blog下</span><br><span class="line">npm install ： 安装依赖</span><br><span class="line">hexo server ： 开启站点服务</span><br></pre></td></tr></table></figure>
 <p>到这一步会出先下图<br><img src="https://img-blog.csdnimg.cn/20210502110628982.png" alt="在这里插入图片描述"><br>浏览器访问： localhost:4000    这里意思是生成本地预览，你也可以更改其他端口号。使用指令： hexo s -p 5555<br>如果页面显示正常应该是这样的：<img src="http://image.liuxianan.com/201608/20160818_132443_202_6848.png"><br>页面可能会出错，可以通过更改端口号尝试。不过问题不大，正常情况。</p>
@@ -61,6 +62,8 @@
 <h5 id="2-写博客"><a href="#2-写博客" class="headerlink" title="2.写博客"></a>2.写博客</h5><p>定位到我们的hexo根目录</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &#39;my-first-blog&#39;</span><br></pre></td></tr></table></figure>
 <p>hexo会帮我们在_posts下生成相关md文件：<br><img src="http://image.liuxianan.com/201608/20160823_183047_352_1475.png"><br>然后双击打开此文件，当然你也可以直接自己新建md文件，用这个命令的好处是帮我们自动生成了时间。<br>在这里推荐一个好用的文本软件：Sublime Text 3。百度自行下载即可。</p>
+<p>高产的一上午~~唔唔唔~</p>
+<h2 id="最后一点注意了，避免采坑。"><a href="#最后一点注意了，避免采坑。" class="headerlink" title="最后一点注意了，避免采坑。"></a>最后一点注意了，避免采坑。</h2><p>1.如果你是域名访问网站站点，需要在仓库中的README.MD文件中写入你的域名<br>2.当你每次部署（更新）完你的仓库，你需要在Setting的pages中重新输入你的域名<br>3.若你在第哪一步频繁采坑可以联系：QQ：2021698104</p>
 
     </div>
 
