@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        执笔画落梅的博客
+    </title>
+    <meta name="description" content= 嘿，我是王政~~，热衷于渗透测试。想打竞赛 >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body id="bodyx">
+    <div class="hd posts">
+    <a href="/index.html"><i class="fa fa-home
+ replay-btn" aria-hidden="true"></i></a>
+    <div class="post-title">
+        <p>
+            搭建完成
+        </p>
+        <hr>
+    </div>
+    <div class="post-content">
+        <h2 id="搭建完成分享记录一下成果"><a href="#搭建完成分享记录一下成果" class="headerlink" title="搭建完成分享记录一下成果"></a>搭建完成分享记录一下成果</h2><h4 id="第一步：安装所需软件"><a href="#第一步：安装所需软件" class="headerlink" title="第一步：安装所需软件"></a>第一步：安装所需软件</h4><p>首先去官网下载nodejs。链接: <a target="_blank" rel="noopener" href="http://nodejs.cn/">link</a>.<br>下载过后下载git,这个一般电脑自带的软件商店中有。<br>然后下载在git中下载hexo。链接: <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">link</a>.<br>tip: 这里先找好你放置的文件目录；因为下边的指令操作都是在blog文件下操作的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对着所选的文件夹，右键打开git bash here 输入指令：npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">下边的指令都是在git中输入的</span><br><span class="line">hexo init blog : 新建hexo的文件目录在blog下</span><br><span class="line">cd blog ： 转到blog下</span><br><span class="line">npm install ： 安装依赖</span><br><span class="line">hexo server ： 开启站点服务</span><br></pre></td></tr></table></figure>
+<p>到这一步会出先下图<br><img src="https://img-blog.csdnimg.cn/20210502110628982.png" alt="在这里插入图片描述"><br>浏览器访问： localhost:4000    这里意思是生成本地预览，你也可以更改其他端口号。使用指令： hexo s -p 5555<br>如果页面显示正常应该是这样的：<img src="http://image.liuxianan.com/201608/20160818_132443_202_6848.png"><br>页面可能会出错，可以通过更改端口号尝试。不过问题不大，正常情况。</p>
+<h4 id="第二步-：-GitHub上的操作"><a href="#第二步-：-GitHub上的操作" class="headerlink" title="第二步 ： GitHub上的操作"></a>第二步 ： GitHub上的操作</h4><p>需要注册GitHub用户，之后点击主界面的加号新建repository<br><img src="https://img-blog.csdnimg.cn/20210502111217738.png" alt="在这里插入图片描述"><br>然后注意这里的Repository name，一定要和自己的GitHub用户名一致。且后缀必须是github.io。因为我的注册过了所以会报错<br><img src="https://img-blog.csdnimg.cn/20210502111338494.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxNjA3NjQ0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>再然后按下图要求勾选，最后创建仓库<br><img src="https://img-blog.csdnimg.cn/20210502111622518.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxNjA3NjQ0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这时仓库中有一个README.md的文件，先不用管它    ，<br>下一步配置ssh<br>为什么要配置这个呢？因为你提交代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~&#x2F;. ssh #检查本机已存在的ssh密钥</span><br></pre></td></tr></table></figure>
+<p>如果提示：No such file or directory 说明你是第一次使用git。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;邮件地址&quot;</span><br></pre></td></tr></table></figure>
+<p>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：<br><img src="http://image.liuxianan.com/201608/20160818_143914_495_9084.png"><br>将刚复制的内容粘贴到key那里，title随便填，保存。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com # 注意邮箱地址不用改</span><br></pre></td></tr></table></figure>
+<p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，然后会看到：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi liuxianan! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>看到这个信息说明SSH已配置成功！</p>
+<p>此时你还需要配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;liuxianan&quot;&#x2F;&#x2F; 你的github用户名，非昵称</span><br><span class="line">$ git config --global user.email  &quot;xxx@qq.com&quot;&#x2F;&#x2F; 填写你的github注册邮箱</span><br></pre></td></tr></table></figure>
+<p>具体这个配置是干嘛的我没仔细深究。</p>
+<h4 id="第三步-：-hexo写博客主题模板部署"><a href="#第三步-：-hexo写博客主题模板部署" class="headerlink" title="第三步 ： hexo写博客主题模板部署"></a>第三步 ： hexo写博客主题模板部署</h4><p>如果上第一步你成功显示了localhost:4000的正常界面。（这个是hexo默认的主题）<br>直接打开blog文件下的配置文件_config.yml，在文件最下方添加上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: github</span><br><span class="line">  repository: https:&#x2F;&#x2F;github.com&#x2F;你的用户名&#x2F;你的用户名.github.io.git</span><br><span class="line">  branch: main &#x2F;&#x2F;为什么有的博客中是master，这就牵涉到了GitHub的分支问题。之前GitHub默认的是master自2020年就把默认改成了main。</span><br></pre></td></tr></table></figure>
+<p>如果你的分支写的是master，会导致访问 https://你的用户名.github.io 出现404<br>还有最后一步就是，更改此文件中的url: https://你的用户名.github.io<br><img src="https://img-blog.csdnimg.cn/20210502113432497.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzUxNjA3NjQ0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>即可输入指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &#x2F;&#x2F;清除原仓库中的文件</span><br><span class="line">hexo g &#x2F;&#x2F;生成</span><br><span class="line">hexo d &#x2F;&#x2F;部署</span><br></pre></td></tr></table></figure>
+<p>也可一键部署：hexo g -d</p>
+<h4 id="拓展：更换主题，写博客"><a href="#拓展：更换主题，写博客" class="headerlink" title="拓展：更换主题，写博客"></a>拓展：更换主题，写博客</h4><h5 id="1-更换主题"><a href="#1-更换主题" class="headerlink" title="1.更换主题"></a>1.更换主题</h5><p>操作就是将自己喜欢的主题文件下载到blog/themes下，然后修改blog文件下_config.yml中的themes项。<br>具体的下载方式可以用git中的指令下载，也可在别人的GitHub仓库中下载，这个就不举例了<br>指令下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &quot;网站url&quot; &#x2F;&#x2F;例如克隆我的：git clone &quot;https:&#x2F;&#x2F;github.com&#x2F;tpt11fb&#x2F;tpt11fb.github.io&quot;</span><br></pre></td></tr></table></figure>
+<p>然后执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &#x2F;&#x2F;清除原仓库中的文件</span><br><span class="line">hexo g &#x2F;&#x2F;生成</span><br><span class="line">hexo d &#x2F;&#x2F;部署</span><br></pre></td></tr></table></figure>
+<h5 id="2-写博客"><a href="#2-写博客" class="headerlink" title="2.写博客"></a>2.写博客</h5><p>定位到我们的hexo根目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &#39;my-first-blog&#39;</span><br></pre></td></tr></table></figure>
+<p>hexo会帮我们在_posts下生成相关md文件：<br><img src="http://image.liuxianan.com/201608/20160823_183047_352_1475.png"><br>然后双击打开此文件，当然你也可以直接自己新建md文件，用这个命令的好处是帮我们自动生成了时间。<br>在这里推荐一个好用的文本软件：Sublime Text 3。百度自行下载即可。</p>
+
+    </div>
+
+    
+        <hr class="fhr">
+        <div id="vcomments"></div>
+    
+</div>
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: Tpt11fb | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_container_site_pv">Page Views: <span id="busuanzi_value_site_pv"></span></span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv">Unique Visitors: <span id="busuanzi_value_site_uv"></span></span>
+    
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
+
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
+</div>
+
+<input type="hidden" id="web_style" value="black">
+<input type="hidden" id="valine_appid" value="NOsswOncKgc8HOxqo9oxIWlX-gzGzoHsz">
+<input type="hidden" id="valine_appKey" value="z1FihjWEbS8uIfUQdmCtK7zz">
+
+<script src="/libs/jquery.min.js"></script>
+
+
+<script src="/libs/highlight/highlight.pack.js"></script>
+
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+
+<script src="/js/js.js"></script>
+
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+</body>
+</html>
